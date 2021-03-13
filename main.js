@@ -4,6 +4,7 @@ var app = new Vue({
     msg: "測定開始",
     g: null,
     isPush: false,
+    baseURL: "https://daruma-st.sakura.ne.jp/file/speedtest/server.php",
     btn: [
       {
         id: "btn1",
@@ -30,17 +31,18 @@ var app = new Vue({
   },
   methods: {
     speedtest() {
+      axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
+      var params = new URLSearchParams();
+      params.append("size", this.select);
       var start = new Date().getTime();
       axios
-        .post("" + this.select, {})
+        .post(this.baseURL, params)
         .then(
           function (response) {
             var end = new Date().getTime();
             var sec = (end - start) / 1000;
             var speed = (50 * 8) / sec;
-            console.log(speed);
             this.g.refresh(speed);
-            this.isPush = false;
           }.bind(this)
         )
         .catch(function (error) {
@@ -48,7 +50,6 @@ var app = new Vue({
         });
     },
     onClick() {
-      this.isPush = true;
       this.speedtest();
     },
   },
