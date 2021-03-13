@@ -32,7 +32,7 @@ var app = new Vue({
     speedtest() {
       var start = new Date().getTime();
       axios
-        .post("https://cors.io/?" + this.select, {})
+        .post(this.select, {})
         .then(
           function (response) {
             this.isPush = true;
