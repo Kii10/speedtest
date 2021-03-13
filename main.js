@@ -29,10 +29,9 @@ var app = new Vue({
   },
   methods: {
     speedtest() {
-      axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
       var start = new Date().getTime();
       axios
-        .post(this.select, { withCredentials: true })
+        .post("https://cors.io/?" + this.select, {})
         .then(
           function (response) {
             var end = new Date().getTime();
