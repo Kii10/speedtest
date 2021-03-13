@@ -21,7 +21,7 @@
         </div>
       </div>
 
-      <button class="btn" @click="onClick">{{msg}}</button>
+      <button class="btn" :disabled="isPush" @click="onClick">{{msg}}</button>
     </div>
 
     <script src="raphael-2.1.4.min.js"></script>
