@@ -3,6 +3,7 @@ var app = new Vue({
   data: {
     msg: "測定開始",
     g: null,
+    isPush: false,
     btn: [
       {
         id: "btn1",
@@ -34,11 +35,13 @@ var app = new Vue({
         .post("https://cors.io/?" + this.select, {})
         .then(
           function (response) {
+            this.isPush = true;
             var end = new Date().getTime();
             var sec = (end - start) / 1000;
             var speed = (50 * 8) / sec;
             console.log(speed);
             this.g.refresh(speed);
+            this.isPush = false;
           }.bind(this)
         )
         .catch(function (error) {
