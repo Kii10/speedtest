@@ -4,7 +4,7 @@ var app = new Vue({
     msg: "測定開始",
     g: null,
     isPush: false,
-    baseURL: "https://daruma-st.sakura.ne.jp/file/speedtest/server.php",
+    baseURL: "Please Enter Your URL",
     btn: [
       {
         id: "btn1",
@@ -31,7 +31,6 @@ var app = new Vue({
   },
   methods: {
     speedtest() {
-      axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
       var params = new URLSearchParams();
       params.append("size", this.select);
       var start = new Date().getTime();
