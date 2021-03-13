@@ -1,0 +1,62 @@
+* {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 500;
+}
+
+#gauge {
+  width: 80vw;
+  height: 80vw;
+  margin: 0 auto;
+  max-width: 600px;
+  max-height: 600px;
+}
+
+.select input {
+  display: none;
+}
+
+.select {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.select_inner {
+  display: inline-block;
+  padding: 10px 0;
+}
+
+.select label {
+  cursor: pointer;
+  margin: 0;
+  padding: 15px 25px;
+  border-right: 1px solid rgb(230, 230, 230);
+  background-color: rgb(240, 240, 240);
+  text-align: center;
+  transition: 0.5s;
+}
+
+.select_inner:first-of-type label {
+  border-radius: 5px 0 0 5px;
+}
+
+.select_inner:last-of-type label {
+  border-right: 0;
+  border-radius: 0 5px 5px 0;
+}
+
+.select input[type="radio"]:checked + label {
+  background-color: rgb(119, 236, 252);
+  color: white;
+}
+
+.btn {
+  display: block;
+  font-size: 2vw;
+  color: white;
+  background-color: rgb(87, 248, 114);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  padding: 15px 30px;
+  margin: 0 auto;
+}

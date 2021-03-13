@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>SpeedTest</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="gauge"></div>
+      <div class="select">
+        <p>測定用ファイルサイズ</p>
+        <div class="select_inner" v-for="i in btn" :key="i.id">
+          <input type="radio" :id="i.id" :value="i.value" v-model="select" />
+          <label :for="i.id">{{i.value}}</label>
+        </div>
+      </div>
+
+      <button class="btn" @click="onClick">{{msg}}</button>
+    </div>
+
+    <script src="raphael-2.1.4.min.js"></script>
+    <script src="justgage.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>
