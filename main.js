@@ -29,8 +29,7 @@ var app = new Vue({
   },
   methods: {
     speedtest() {
-      axios.defaults.headers.post["Access-Control-Allow-Origin"] =
-        "https://kito2021.github.io/speedtest";
+      axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
       var start = new Date().getTime();
       axios
         .post(this.select, { withCredentials: true })
