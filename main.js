@@ -15,7 +15,7 @@ var app = new Vue({
     speedtest() {
       var start = new Date().getTime();
       axios
-        .post("file/" + this.select, {})
+        .post("https://kito2021.github.io/speedtest/file/" + this.select, {})
         .then(
           function (response) {
             var end = new Date().getTime();
