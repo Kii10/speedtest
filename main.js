@@ -15,7 +15,7 @@ var app = new Vue({
     speedtest() {
       var start = new Date().getTime();
       axios
-        .post(this.select, {})
+        .post("file/" + this.select, {})
         .then(
           function (response) {
             var end = new Date().getTime();
