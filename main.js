@@ -8,34 +8,33 @@ var app = new Vue({
       {
         id: "btn1",
         name: "10MB",
-        value: "https://daruma-st.sakura.ne.jp/file/speedtest/10MB",
+        value: "10MB",
       },
       {
         id: "btn2",
         name: "20MB",
-        value: "https://daruma-st.sakura.ne.jp/file/speedtest/20MB",
+        value: "20MB",
       },
       {
         id: "btn3",
         name: "50MB",
-        value: "https://daruma-st.sakura.ne.jp/file/speedtest/50MB",
+        value: "50MB",
       },
       {
         id: "btn4",
         name: "80MB",
-        value: "https://daruma-st.sakura.ne.jp/file/speedtest/80MB",
+        value: "80MB",
       },
     ],
-    select: "https://daruma-st.sakura.ne.jp/file/speedtest/50MB",
+    select: "50MB",
   },
   methods: {
     speedtest() {
       var start = new Date().getTime();
       axios
-        .post(this.select, {})
+        .post("" + this.select, {})
         .then(
           function (response) {
-            this.isPush = true;
             var end = new Date().getTime();
             var sec = (end - start) / 1000;
             var speed = (50 * 8) / sec;
@@ -49,6 +48,7 @@ var app = new Vue({
         });
     },
     onClick() {
+      this.isPush = true;
       this.speedtest();
     },
   },
