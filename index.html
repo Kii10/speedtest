@@ -17,7 +17,7 @@
         <p>測定用ファイルサイズ</p>
         <div class="select_inner" v-for="i in btn" :key="i.id">
           <input type="radio" :id="i.id" :value="i.value" v-model="select" />
-          <label :for="i.id">{{i.value}}</label>
+          <label :for="i.id">{{i.name}}</label>
         </div>
       </div>
 

@@ -3,25 +3,29 @@ var app = new Vue({
   data: {
     msg: "測定開始",
     g: null,
-    speed: 1000,
-    select: "20MB",
     btn: [
       {
         id: "btn1",
-        value:
-          "https://drive.google.com/uc?export=download&id=1AUBA2kqnM5iZ2fhIk20MuH022h6Y_4Tz",
+        name: "10MB",
+        value: "https://daruma-st.sakura.ne.jp/file/speedtest/10MB",
       },
       {
         id: "btn2",
-        value:
-          "https://drive.google.com/uc?export=download&id=1wrQZ8jBIry55nXjVAc7AgO-h4zXizmP7",
+        name: "20MB",
+        value: "https://daruma-st.sakura.ne.jp/file/speedtest/20MB",
       },
       {
         id: "btn3",
-        value:
-          "https://drive.google.com/uc?export=download&id=1zu7Ap01UQIXm7ZLf8gl_ToYFjeC3Bb3J",
+        name: "50MB",
+        value: "https://daruma-st.sakura.ne.jp/file/speedtest/50MB",
+      },
+      {
+        id: "btn4",
+        name: "80MB",
+        value: "https://daruma-st.sakura.ne.jp/file/speedtest/80MB",
       },
     ],
+    select: "https://daruma-st.sakura.ne.jp/file/speedtest/50MB",
   },
   methods: {
     speedtest() {
@@ -33,6 +37,7 @@ var app = new Vue({
             var end = new Date().getTime();
             var sec = (end - start) / 1000;
             var speed = (50 * 8) / sec;
+            console.log(speed);
             this.g.refresh(speed);
           }.bind(this)
         )
@@ -49,7 +54,7 @@ var app = new Vue({
       id: "gauge",
       value: 0,
       min: 0,
-      max: 1000,
+      max: 100,
       title: "回線速度[Mbps]",
     });
   },
