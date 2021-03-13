@@ -6,16 +6,28 @@ var app = new Vue({
     speed: 1000,
     select: "20MB",
     btn: [
-      { id: "btn1", value: "20MB" },
-      { id: "btn2", value: "50MB" },
-      { id: "btn3", value: "80MB" },
+      {
+        id: "btn1",
+        value:
+          "https://drive.google.com/uc?export=download&id=1AUBA2kqnM5iZ2fhIk20MuH022h6Y_4Tz",
+      },
+      {
+        id: "btn2",
+        value:
+          "https://drive.google.com/uc?export=download&id=1wrQZ8jBIry55nXjVAc7AgO-h4zXizmP7",
+      },
+      {
+        id: "btn3",
+        value:
+          "https://drive.google.com/uc?export=download&id=1zu7Ap01UQIXm7ZLf8gl_ToYFjeC3Bb3J",
+      },
     ],
   },
   methods: {
     speedtest() {
       var start = new Date().getTime();
       axios
-        .post("https://kito2021.github.io/speedtest/file/" + this.select, {})
+        .post(this.select, {})
         .then(
           function (response) {
             var end = new Date().getTime();
