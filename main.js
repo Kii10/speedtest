@@ -31,7 +31,7 @@ var app = new Vue({
     speedtest() {
       var start = new Date().getTime();
       axios
-        .post(this.select, {})
+        .post(this.select, { withCredentials: true })
         .then(
           function (response) {
             var end = new Date().getTime();
